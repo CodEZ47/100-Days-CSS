@@ -44,25 +44,28 @@
 		border-radius: 5px;
 		box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.5);
 		z-index: 0;
-		animation-duration: 0.2s;
+		animation-duration: 0.7s;
 		animation-iteration: 1;
 		animation-fill-mode: forwards;
 	}
 	.line-1{
-		animation: 0.25s movedown forwards;
+		animation: 0.7s movedown-rev forwards;
 	}
 	.line-2{
-		animation: 1s disappear forwards;
+		animation: 0.7s fade-in forwards;
 	}
 	.line-3{
-		animation: 0.25s moveup forwards;
+		animation: 0.7s moveup-rev forwards;
 	}
 	&.clicked{
 		.line-1{
-			animation: 0.25s rotatedown forwards;
+			animation: 0.7s movedown forwards;
+		}
+		.line-2{
+			animation: 0.7s fade-out forwards;
 		}
 		.line-3{
-			animation: 0.25s rotateup forwards;
+			animation: 0.7s moveup forwards;
 		}
 	}
 }
@@ -74,33 +77,78 @@
 
 @keyframes movedown{
 	0%{
-		transform: translateY(0px) rotate(0deg);
+		transform: translate3d(0, 0, 0) rotate(0deg);
+		background-color: white;
 	}
 	50%{
-		tranform: translateY(15px) rotate(0deg);
+		transform: translate3d(0, 20px, 0) rotate(0);
 	}
 	100%{
-		transform: translateY(20px) rotate(0deg);
+		transform: translate3d(0, 20px, 0) rotate(45deg);
+		background-color: red;
 	}
 }
 
 @keyframes moveup{
 	0%{
-		transform: translateY(0px) rotate(0deg);
+		transform: translate3d(0, 0, 0) rotate(0deg);
+		background-color: white;
 	}
 	50%{
-		tranform: translateY(-15px) rotate(0deg);
+		transform: translate3d(0, -20px, 0) rotate(0);
 	}
 	100%{
-		transform: translateY(-20px) rotate(0deg);
+		transform: translate3d(0, -20px, 0) rotate(-45deg);
+		background-color: red;
 	}
 }
 
-@keyframes disappear{
+@keyframes fade-out{
 	0%{
+		transform: scale(1);
 		opacity: 1;
 	}
 	100%{
+		transform: scale(0);
 		opacity: 0;
+	}
+}
+
+@keyframes movedown-rev{
+	0%{
+		transform: translate3d(0, 20px, 0) rotate(-45deg);
+		background-color: red;
+	}
+	50%{
+		transform: translate3d(0, 20px, 0) rotate(0);
+	}
+	100%{
+		transform: translate3d(0, 0px, 0) rotate(0deg);
+		background-color: white;
+	}
+}
+
+@keyframes moveup-rev{
+	0%{
+		transform: translate3d(0, -20px, 0) rotate(45deg);
+		background-color: red;
+	}
+	50%{
+		transform: translate3d(0, -20px, 0) rotate(0);
+	}
+	100%{
+		transform: translate3d(0, 0, 0) rotate(0deg);
+		background-color: white;
+	}
+}
+
+@keyframes fade-in{
+	0%{
+		transform: scale(0);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
 	}
 }
