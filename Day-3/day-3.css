@@ -1,4 +1,3 @@
-
 // delete the following line if no text is used
 // edit the line if you wanna use other fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
@@ -57,10 +56,13 @@
 	position: absolute;
 	bottom: 56px;
 	left: 32px;
-	border-bottom: 57px solid white;
-	border-left: 58px solid #7ddffc;
-	border-right: 58px solid #7ddffc;
-	background: white;
+	width: 116px;
+	height: 57px;
+	clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+	animation: 5s pyramid-shade;
+	animation-timing-function: cubic-bezier(.4,0,.49,1);
+	animation-iteration-count: infinite;
+	background: #D3D3D3;
 }
 
 .right-side{
@@ -70,6 +72,9 @@
 	width: 58px;
 	height: 57px;
 	background-color: grey;
+	animation: 5s pyramid-shade reverse;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(.4,0,.49,1);
 	clip-path: polygon(0 0, 28% 100%, 100% 100%);
 }
 
@@ -77,28 +82,71 @@
 	position: absolute;
 	width: 35px;
 	height: 35px;
-	left: -30px;
-	top: 70px;
+	left: 73px;
+	top: 7px;
 	background-color: #FFEF00;
 	border-radius: 50%;
-	animation: 5s sun-rise-set;
+	animation: 5s sun-anim;
 	animation-iteration-count: infinite;
-	animation-timing-function:cubic-bezier(.05,1.12,.95,.98);
+	animation-timing-function: cubic-bezier(.4,0,.49,1);
+	transform-origin: 70% 400%;
 }
 
 .shadow{
-	
+	position: absolute;
+	width: 360px;
+	height: 30px;
+	top: 124px;
+	animation: 5s ;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(.4,0,.49,1);
+	clip-path: polygon(9% 0, 48% 5%, 41% 0);
+	transform-origin: 50% 0%;
+	background: #696969;
 }
 
 
-@keyframes sun-rise-set{
+@keyframes sun-anim{
 	0%{
-		transform: translate3d(0);
+		transform: rotate(-70deg);
 	}
-	25%{
-		transform: translate3d(100px, -40px, 0);
+	30%{
+		transform: rotate(-28deg);
+	}
+	70%{
+		background: yellow;
 	}
 	100%{
-		transform: translate3d(140px, 20px, 0);
+		transform: rotate(70deg);
+	}
+}
+
+@keyframes pyramid-shade {
+	0%{
+		background-color: white;
+	}
+	30%{
+		background-color: #F9F9F9;
+	}
+	70%{
+		background-color:#D3D3D3;
+	}
+	100%{
+		background-color: #C1B4B1;
+	}
+}
+
+@keyframes shadow-path {
+	0%{
+		clip-path: polygon(9% 0, 64% 9%, 41% 0);
+	}
+	30%{
+		clip-path: polygon(9% 0, 56% 19%, 41% 0);
+	}
+	70%{
+		clip-path: polygon(9% 0, 4% 23%, 41% 0);
+	}
+	100%{
+		clip-path: polygon(9% 0, 0 3%, 41% 0);
 	}
 }
