@@ -43,10 +43,47 @@
 	display: flex;
 	padding-left: 10px;
 	padding-bottom: 15px;
+	padding-right: 0;
+	column-gap: 50px;
 }
 .heading-right{
 	color: white;
 	display: flex;
 	flex-direction: column;
-	column-gap: 0;
+}
+.title{
+	font-size: 14px;
+}
+.title span{
+	font-size: 11px;
+}
+
+.heading-left{
+	text-align: right;
+}
+
+.label{
+	text-align: right;
+	padding: 10px 10px 10px 0px;
+	display: block;
+}
+
+.red{
+	
+}
+
+.red::before{
+	width: 11px;
+	height: 3px;
+	background: red;
+}
+
+.blue{
+	
+}
+
+.blue::before{
+	width: 11px;
+	height: 3px;
+	background: blue;
 }
