@@ -31,6 +31,8 @@
   transform: translate(-50%,-50%);
 	width: 300px;
 	height: 220px;
+	border-radius: 5px;
+	// overflow: hidden;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	display: flex;
 	flex-direction: column;
@@ -40,50 +42,77 @@
 	width: 300px;
 	height: 60px;
 	background: orange;
-	display: flex;
 	padding-left: 10px;
 	padding-bottom: 15px;
 	padding-right: 0;
+	
 	column-gap: 50px;
-}
-.heading-right{
-	color: white;
-	display: flex;
-	flex-direction: column;
-}
-.title{
-	font-size: 14px;
-}
-.title span{
-	font-size: 11px;
+	
+	.small{
+		font-size: 11px;
+		position: absolute;
+		color: #fff;
+		font-weight: bold;
+	}
+	.big{
+		font-size: 14px;
+		position: absolute;
+		color: #fff;
+		font-weight: bold;
+	}
 }
 
-.heading-left{
-	text-align: right;
+.title{
+	top: 12px;
+	left: 15px;
+}
+.date{
+	top: 30px;
+	left: 15px;		
+}
+.rev{
+	top: 14px;
+	right: 15px;
+}
+.mon{
+	top: 28px;
+	right: 15px;
 }
 
 .label{
+	padding: 10px 10px;
+	font-size: 10px;
 	text-align: right;
-	padding: 10px 10px 10px 0px;
-	display: block;
 }
 
-.red{
+.stats{
+	position: relative;
+	height: 81px;
+	width: 260px;
+	margin: 0 auto;
+
+	
+	
+	.l-1{
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		height: 1px;
+		background: #ececec;
+	}
+	.l-2{
+		@extend .l-1;
+		top: 40px;
+	}
+	.l-3{
+		@extend .l-1;
+		top: inherit;
+		bottom: 0px;
+	}
+	
 	
 }
-
-.red::before{
-	width: 11px;
-	height: 3px;
-	background: red;
-}
-
-.blue{
-	
-}
-
-.blue::before{
-	width: 11px;
-	height: 3px;
-	background: blue;
+.red-line{
+		
 }
